@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 export default (props) => {
   return (
     <StyledLink>
-      <a href={props.href}>
+      <Link to={props.href}>
         <i className={`fa fa-${props.className}`}>{props.children}</i>
-      </a>
+      </Link>
     </StyledLink>
   );
 };
