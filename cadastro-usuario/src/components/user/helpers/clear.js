@@ -1,5 +1,5 @@
 import { initialState } from "../context/UsersContext";
 
-export default (setUsers) => {
-  setUsers(initialState);
+export default (users, setUsers) => {
+  setUsers({ ...users, user: initialState.user });
 };

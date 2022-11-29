@@ -1,31 +1,36 @@
-import React, { Component } from "react";
+import React /* , { Component }  */ from "react";
 import Main from "../template/Main";
-/* import UsersProvider from "./context/UsersContext";
+import UsersProvider from "./context/UsersContext";
+import RenderForm from "./form/RenderForm";
+import RenderTable from "./table/RenderTable";
+import LoadUsers from "./useEffect/LoadUsers";
 
-import RenderForm from "./form/RenderForm"; */
-import axios from "axios";
-
-const baseUrl = "http://localhost:3001/users";
+/* import axios from "axios"; */
 
 const headerProps = {
   icon: "users",
   title: "Usuários",
   subtitle: "Cadastro de usuários: Incluir, Listar, Alterar e Excluir.",
 };
-export const initialState = {
-  user: { name: "", email: "" },
-  list: [],
-};
 
-/* export default (props) => {
+export default (props) => {
   return (
     <UsersProvider>
+      <LoadUsers />
       <Main {...headerProps}>
         <RenderForm />
+        <RenderTable /> {/* Usa o contexto usersContext como o remderForm  */}
       </Main>
     </UsersProvider>
   );
-}; */
+};
+
+/* const baseUrl = "http://localhost:3001/users";
+
+export const initialState = {
+  user: { name: "", email: "" },
+  list: [],
+}; 
 
 export default class UserCrud extends Component {
   state = { ...initialState };
@@ -169,4 +174,4 @@ export default class UserCrud extends Component {
       </Main>
     );
   }
-}
+} */
