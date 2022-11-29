@@ -1,50 +1,37 @@
 import React, { Component } from "react";
 import Main from "../template/Main";
+/* import UsersProvider from "./context/UsersContext";
+
+import RenderForm from "./form/RenderForm"; */
 import axios from "axios";
+
+const baseUrl = "http://localhost:3001/users";
 
 const headerProps = {
   icon: "users",
   title: "Usuários",
   subtitle: "Cadastro de usuários: Incluir, Listar, Alterar e Excluir.",
 };
-
-const baseUrl = "http://localhost:3001/users";
-const initialState = {
+export const initialState = {
   user: { name: "", email: "" },
   list: [],
 };
 
 /* export default (props) => {
-  const [userCrud, setUserCrud] = useState(initialState);
-
-  const clear = () => {
-    setUserCrud(initialState);
-  };
-
-  const save = () => {
-    const user = userCrud.user;
-    const method = user.id ? "put" : "post";
-    const url = user.id ? `${baseUrl}/${user.id}` : baseUrl;
-    axios[method](url, user).then((resp) => {
-      const list = getUpdatedList(resp.data);
-      setUserCrud({ user: initialState.user, list });
-    });
-  };
-
-  const getUpdatedList = (user) => {
-    const list = userCrud.list.filter((u) => u.id !== user.id);
-    list.unshift(user); //coloca um determinado elemento na primeira posição do array
-    return list;
-  };
-
-  return <Main {...headerProps}>Cadastro de Usuário</Main>;
+  return (
+    <UsersProvider>
+      <Main {...headerProps}>
+        <RenderForm />
+      </Main>
+    </UsersProvider>
+  );
 }; */
 
 export default class UserCrud extends Component {
   state = { ...initialState };
 
   clear() {
-    this.setState({ user: initialState });
+    this.setState({ user: initialState.user }); //Uma vez que quero limpar apenas os dados digitados no input preciso usar "initialState.user"
   }
 
   save() {
@@ -71,7 +58,7 @@ export default class UserCrud extends Component {
 
   renderForm() {
     return (
-      <div className="forn">
+      <div className="form">
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="form-group">
@@ -91,7 +78,7 @@ export default class UserCrud extends Component {
             <div className="form-group">
               <label>Email</label>
               <input
-                type="email"
+                type="text"
                 className="form-control"
                 name="email"
                 value={this.state.user.email}
@@ -109,7 +96,7 @@ export default class UserCrud extends Component {
             </button>
             <button
               className="btn btn-secondary ml-2"
-              onClickCapture={(e) => this.clear(e)}
+              onClick={(e) => this.clear(e)}
             >
               Cancelar
             </button>
