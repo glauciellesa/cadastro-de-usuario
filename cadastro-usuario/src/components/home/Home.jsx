@@ -7,9 +7,7 @@ export default (props) => (
     title="Início"
     subtitle="Segundo projeto do capítulo de React."
   >
-    <div className="display-4" style={{ boxShadow: "none" }}>
-      Bem vindo!
-    </div>
+    <div className="display-4">Bem vindo!</div>
     <hr />
     <p className="mb-0">
       Sistema desenvolvido para exemplificar a construção de um cadastro

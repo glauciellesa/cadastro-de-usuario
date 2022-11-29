@@ -13,9 +13,8 @@ export default (props) => (
 
 const StyledMain = styled.main`
   grid-area: content;
-  background-color: ${({ theme }) => theme.light};
-  color: ${({ theme }) => theme.dark};
   div {
-    box-shadow: 0px 0px 15px #605f5f44;
+    color: ${({ theme }) => theme.dark};
+    background-color: ${({ theme }) => theme.light};
   }
 `;
