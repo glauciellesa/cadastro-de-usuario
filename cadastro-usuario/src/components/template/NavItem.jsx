@@ -24,4 +24,12 @@ const StyledLink = styled.div`
     background: linear-gradient(135deg, #07a7e3 0%, #32dac3 100%);
     width: 100%;
   }
+  @media (max-width: 768px) {
+    a {
+      display: inline;
+      padding: 10px;
+      text-decoration: none;
+      margin: 0;
+    }
+  }
 `;

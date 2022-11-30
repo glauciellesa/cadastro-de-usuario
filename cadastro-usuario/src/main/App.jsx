@@ -58,6 +58,28 @@ const StyledApp = styled.div`
     "menu footer";
   height: 100vh;
   background-color: #f8f8f8;
+
+  @media (max-width: 768px) {
+    grid-template-rows: ${({ theme }) => theme.headerHeight} ${({ theme }) =>
+        theme.menuTopHeight} 1fr ${({ theme }) => theme.footerHeight};
+    grid-template-columns: ${({ theme }) => theme.asideWidth} 1fr;
+    grid-template-areas:
+      "logo header"
+      "menu menu"
+      "content content"
+      "footer footer";
+  }
+
+  @media (max-width: 576px) {
+    grid-template-rows: ${({ theme }) => theme.logoHeight} ${({ theme }) =>
+        theme.menuTopHeight} 1fr ${({ theme }) => theme.footerHeight};
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "menu"
+      "content"
+      "footer";
+  }
 `;
 
 const StyledToggle = styled.div`

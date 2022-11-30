@@ -22,4 +22,10 @@ const StyledLogo = styled.aside`
     padding: 0 15px;
     width: 100%;
   }
+
+  @media (max-width: 576px) {
+    img {
+      width: 350px;
+    }
+  }
 `;

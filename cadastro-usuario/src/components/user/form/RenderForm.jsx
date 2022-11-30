@@ -10,7 +10,7 @@ export default (props) => {
   return (
     <form className="form">
       <div className="row">
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 col-xs-3">
           <div className="form-group">
             <label> Nome </label>
             <input
@@ -26,7 +26,7 @@ export default (props) => {
           </div>
         </div>
 
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 col-xs-3">
           <div className="form-group">
             <label>Email</label>
             <input

@@ -5,7 +5,7 @@ import RenderRows from "./RenderRows";
 const RenderTable = () => {
   const { users, setUsers } = useContext(UsersContext);
   return (
-    <table className="table mt-4">
+    <table className="table mt-4 col-xs-3">
       <thead>
         <tr>
           <th>ID</th>
