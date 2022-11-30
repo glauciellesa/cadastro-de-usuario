@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ToggleTheme from "../toggle/ToggleTheme";
 import NavItem from "./NavItem";
 
 export default (props) => (
@@ -11,6 +12,7 @@ export default (props) => (
       <NavItem href="/users" className="users">
         Usuários
       </NavItem>
+      <ToggleTheme />
     </nav>
   </StyledMenu>
 );
