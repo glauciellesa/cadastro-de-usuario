@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import CSSReset from "../theme/CSSReset";
+import CSSReset from "../theme/components/CSSReset";
 import Logo from "../components/template/Logo";
 import Routes from "./Routes";
 import Nav from "../components/template/Nav";
@@ -9,7 +9,7 @@ import Footer from "../components/template/Footer";
 import React from "react";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import MyThemeProvider from "../components/contexts/ThemeContext";
+import MyThemeProvider from "../theme/contexts/ThemeContext";
 
 export default (props) => {
   return (
